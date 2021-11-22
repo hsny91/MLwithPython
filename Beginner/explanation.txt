@@ -1,0 +1,10 @@
+# Regression/ Estimation
+# Classification
+# Clustering
+# Associations (iliskilendirme)
+# Anomaly detection
+# Sequence mining
+# Dimension Reduction
+# Recommendations systems
+
+#ANACONDA
