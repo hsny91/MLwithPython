@@ -4,6 +4,15 @@ import matplotlib.pyplot as plt
 # import data
 
 df = pd.read_csv("/Users/hsekeroglu/Desktop/Huesniye/MLwithPython/Regression/Linear_Regression/linear_regression_dataset.csv",sep = ";")
+# take a look at the dataset
+print(df.head())
+
+# summarize the data
+print(df.describe())
+
+#Let's select some features to explore more.
+cdf = df[['deneyim']]
+print(cdf)
 
 # plot data
 plt.scatter(df.deneyim, df.maas)
