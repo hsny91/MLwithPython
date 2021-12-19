@@ -7,6 +7,7 @@ df = pd.read_csv("/Users/hsekeroglu/Desktop/Huesniye/MLwithPython/Regression/Lin
 # take a look at the dataset
 print(df.head())
 
+
 # summarize the data
 print(df.describe())
 
@@ -17,7 +18,7 @@ print(cdf)
 # plot data
 plt.scatter(df.deneyim, df.maas)
 plt.xlabel("deneyim")
-plt.ylabel("maas")
+plt.ylabel("")
 plt.show()
 
 #%% linear regression
