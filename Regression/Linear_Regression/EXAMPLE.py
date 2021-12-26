@@ -38,12 +38,8 @@ print(b1)
 
 #Elde edilen regresyon modeli: Y=[4.4701969]+[1.5831968]X
 
-# bo_predict = lineer_regresyon.predict(0)
-# print(bo_predict)
-
 y_predicted = lineer_regresyon.predict(x_value)
 print(y_predicted)
 plt.scatter(df.x , df.y,color = 'red')
 plt.plot(df.x , y_predicted, color = 'blue')
 plt.show()
-print("finished")
