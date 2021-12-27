@@ -15,8 +15,8 @@ from sklearn.tree import DecisionTreeRegressor
 tree_reg = DecisionTreeRegressor()   # random sate = 0
 tree_reg.fit(x,y)
 
+print(tree_reg.predict(np.array(6).reshape(-1,1)))
 
-tree_reg.predict([[6]])
 x_ = np.arange(min(x),max(x),0.01).reshape(-1,1) ## araliklari 0.01 esit parcalara bölüyoruz.
 y_head = tree_reg.predict(x_)
 # %% visualize
