@@ -37,7 +37,7 @@ linear_reg.fit(x,y)
 #%% prediction
 import numpy as np
 
-b0 = linear_reg.predict(0)
+b0 = linear_reg.predict(np.array(7.8).reshape(-1,1))
 print("b0: ",b0)
 
 b0_ = linear_reg.intercept_
