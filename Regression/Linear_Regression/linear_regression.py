@@ -51,7 +51,7 @@ print("b1: ",b1)   # egim slope
 maas_yeni = 1663 + 1138*11
 print(maas_yeni)
 
-print(linear_reg.predict(11))
+print(linear_reg.predict(np.array(11).reshape(-1,1)))
 
 # visualize line
 array = np.array([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]).reshape(-1,1)  # deneyim
