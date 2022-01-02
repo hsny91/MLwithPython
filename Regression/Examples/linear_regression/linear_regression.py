@@ -2,7 +2,7 @@ import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('/Users/hsekeroglu/Desktop/Huesniye/MLwithPython/Regression/Example/first_example/column_2C_weka.csv')
+data = pd.read_csv('/Users/hsekeroglu/Desktop/Huesniye/MLwithPython/Regression/Examples/linear_regression/column_2C_weka.csv')
 #print(data.head(10))
 
 # create data1 that includes pelvic_incidence that is feature and sacral_slope that is target variable
@@ -43,3 +43,8 @@ plt.xlabel('pelvic_incidence')
 plt.ylabel('sacral_slope')
 plt.plot(x,y_head,color="red")
 plt.show()
+
+
+##### Evaluation_Regression ########
+from sklearn.metrics import r2_score
+print("r2_score: ", r2_score(y,y_head))  ### r2_score:  0.6458410481075871
