@@ -1,10 +1,12 @@
+from turtle import color
 import matplotlib.pyplot as plt
 import pandas as pd
 import pylab as pl
 import numpy as np
 
-df = pd.read_csv("/Users/hsekeroglu/Desktop/Huesniye/MLwithPython/Regression/Examples/linear_regression/FuelConsumptionCo2.csv")
+df = pd.read_csv("/Users/hsekeroglu/Desktop/Huesniye/MLwithPython/Regression/Examples/linear_regression/FuelConsumptionCo2.csv",sep = ",")
 #print(df.head())
+
 
 # summarize the data
 #print(df.describe())
@@ -31,21 +33,33 @@ viz = cdf[['CYLINDERS','ENGINESIZE','CO2EMISSIONS','FUELCONSUMPTION_COMB']]
 # plt.show()
 
 
-#Creating train and test dataset
-msk = np.random.rand(len(df)) < 0.8
-train = cdf[msk]
-test = cdf[~msk]
-
 from sklearn import linear_model
-regr = linear_model.LinearRegression()
-train_x = np.asanyarray(train[['ENGINESIZE']])
-train_y = np.asanyarray(train[['CO2EMISSIONS']])
-regr.fit(train_x, train_y)
+linear_reg = linear_model.LinearRegression()
+x = df.ENGINESIZE.values.reshape(-1,1)
+y = df.CO2EMISSIONS.values.reshape(-1,1)
+linear_reg.fit(x,y)
 
-print ('Coefficients: ', regr.coef_) ##39
-print ('Intercept: ',regr.intercept_) ##125
 
-plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS,  color='blue')
-plt.plot(train_x, regr.coef_[0][0]*train_x + regr.intercept_[0], '-r')
+b0_ = linear_reg.intercept_
+print("b0_: ",b0_)   # y eksenini kestigi nokta intercept #125.3040995]
+
+b1 = linear_reg.coef_
+print("b1: ",b1)   # egim slope #slope 39.12519979
+
+# y_head = bo+b1.x1
+y_head_1 = 125+39*2.4
+y_head_2 = linear_reg.predict(np.array(2.4).reshape(-1,1))
+print(y_head_1,y_head_2)
+y_predicted = linear_reg.predict(x)
+
+# visualize line
+plt.scatter(x,y)
 plt.xlabel("Engine size")
 plt.ylabel("Emission")
+plt.plot(x,y_predicted ,color="red")
+plt.show()
+
+#  Mean Squared Error (MSE) and Root Mean Squared Error (RMSE).
+from sklearn.metrics import r2_score
+
+print("r_score: ", r2_score(y,y_predicted )) # r_score:  0.7641458597854816
