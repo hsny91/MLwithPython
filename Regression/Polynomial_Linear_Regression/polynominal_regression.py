@@ -1,15 +1,15 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("polynomial_regression.csv", sep =";")
+df = pd.read_csv("/Users/hsekeroglu/Desktop/Huesniye/MLwithPython/Regression/Polynomial_Linear_Regression/polynomial+regression.csv", sep =";")
 
 y =df.araba_max_hiz.values.reshape(-1,1)
 x = df.araba_fiyat.values.reshape(-1,1)
 
-plt.scatter(x,y)
-plt.ylabel("araba_max_hiz" )
-plt.xlabel("araba_fiyat") 
-plt.show()
+# plt.scatter(x,y)
+# plt.ylabel("araba_max_hiz" )
+# plt.xlabel("araba_fiyat") 
+# plt.show()
 
 
 # linear regression  y = bo+ b1*x

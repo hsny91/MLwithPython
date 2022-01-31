@@ -119,3 +119,5 @@ from sklearn.linear_model import LogisticRegression
 lr = LogisticRegression()
 lr.fit(x_train.T,y_train.T)
 print("test accuracy {}".format(lr.score(x_test.T,y_test.T)))
+yhat_prob = lr.predict_proba(x_test.T)
+print(yhat_prob)
