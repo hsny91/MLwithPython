@@ -34,3 +34,4 @@ from sklearn.naive_bayes import GaussianNB
 nb = GaussianNB()
 nb.fit(x_train,y_train)
 print("print accuracy of navie bayes algo: ", nb.score(x_test,y_test))
+

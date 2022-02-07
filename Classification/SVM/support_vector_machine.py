@@ -35,3 +35,4 @@ svm = SVC(random_state=1)
 svm.fit(x_train,y_train)
 print("print accuracy: ", svm.score(x_test,y_test))
 # print accuracy:  0.9649122807017544
+
