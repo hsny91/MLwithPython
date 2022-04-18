@@ -123,3 +123,18 @@ print("test accuracy {}".format(lr.score(x_test.T,y_test.T)))
 
 yhat_prob = lr.predict_proba(x_test.T)
 print(yhat_prob)
+
+y_true= y_test
+y_pred= lr.predict(x_test.T)
+
+# Confisuon Matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_true,y_pred)
+
+# Visualization
+import seaborn as sns
+f, ax = plt.subplots(figsize=(5,5))
+sns.heatmap(cm,annot=True,linecolor="red" ,fmt=".0f", ax=ax)
+plt.xlabel("y_pred")
+plt.ylabel("y_true")
+plt.show()

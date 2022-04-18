@@ -13,13 +13,6 @@ M = data[data.diagnosis== "M"]
 B = data[data.diagnosis== "B"]
 print(B.info())
 
-# Scatter plot
-plt.scatter(M.radius_mean,M.area_mean,color = "red", label="kotu")
-plt.scatter(B.radius_mean,B.area_mean,color = "green", label="iyi")
-plt.xlabel("radius_mean")
-plt.ylabel("area_mean")
-plt.legend() # show label
-plt.show()
 
 # Scatter plot
 plt.scatter(M.radius_mean,M.texture_mean,color = "red", label="kotu")
@@ -58,3 +51,16 @@ plt.plot(range(1,15),score_list) # best k value 8
 plt.xlabel=("k values")
 plt.ylabel = (" accuracy")
 plt.show()
+
+# Confusion Matrix  
+y_true = y_test
+y_pred = knn.predict(x_test)
+from sklearn.metrics import confusion_matrix
+cm= confusion_matrix(y_true,y_pred)
+
+#Visualization
+import seaborn as sns 
+f, ax = plt.subplots(figsize=(5,5))
+sns.heatmap(cm,annot=True, linecolor="red", fmt=".0f", ax = ax )
+plt.show()
+
