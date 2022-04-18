@@ -43,7 +43,7 @@ hierarchical_cluster = AgglomerativeClustering(n_clusters=3, affinity='euclidean
 cluster = hierarchical_cluster.fit_predict(data)
 data['label']=cluster
 
-#Visualize
+#Visualization
 plt.scatter(data.x[data.label==0] , data.y[data.label==0], color="red")
 plt.scatter(data.x[data.label ==1], data.y[data.label==1], color="green")
 plt.scatter(data.x[data.label==2], data.y[data.label==2],color="blue")
